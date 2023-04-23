@@ -36,20 +36,13 @@ def _route_python_is_cool_text_(text="is cool"):
 @app.route('/number/<n>', strict_slashes=False)
 def _route_number_(n):
     """returns fifth stipulated text plus format"""
-    try:
-        return '{} is a number'.format(int(n))
-    except:
-        abort(404)
+    return "%i is a number" % n
 
 
 @app.route('/number_template/<n>', strict_slashes=False)
 def _route_number_template_(n):
     """returns sixth stipulated text plus format"""
-    try:
-        n = int(n)
         return render_template('5-number.html', n=n)
-    except:
-        abort(404)
 
 
 if __name__ == "__main__":
