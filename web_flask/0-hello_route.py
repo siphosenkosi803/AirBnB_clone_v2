@@ -14,7 +14,7 @@ def start_app():
     try:
         app.run(host='0.0.0.0', port=5000)
     except Exception as e:
-        print(f"There was an error initializing flask {e}")
+        print("There was an error initializing flask {}".format(e))
 
 
 if __name__ == '__main__':
