@@ -21,7 +21,7 @@ def _route_hbnb_():
 def _route_c_is_fun_text(text):
     """Displays 'C' followed by the value of the text variable"""
     new_text = text.replace('_', ' ')
-    return 'C %s' % text
+    return 'C %s' % new_text
 
 
 if __name__ == '__main__':
