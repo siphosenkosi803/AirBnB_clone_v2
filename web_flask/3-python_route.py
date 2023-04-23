@@ -25,7 +25,7 @@ def _route_c_is_fun_text(text):
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python(text="is cool"):
+def _route_python_is_cool_text(text="is cool"):
     """returns fourth stipulated text"""
     _new_text_two_ = text.replace('_', ' ')
     return 'Python {}'.format(_new_text_two_)
