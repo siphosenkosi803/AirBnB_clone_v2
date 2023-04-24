@@ -8,17 +8,18 @@ from models import storage
 app = Flask(__name__)
 
 
-@app.route('/states_list', strict_slashes=False)
-def _states_retriever_():
-    """rettrieves states list"""
-    states = storage.all(cls=State)
-    return render_template('7-states_list.html', states=states.values())
-
-
 @app.teardown_appcontext
 def _teardown_(session):
     """tears sown current SQLAlchemy session"""
     storage.close()
+
+
+@app.route('/states_list', strict_slashes=False)
+def listing_states():
+    """lists all states"""
+    from models.state import State
+    states = storage.all(State).values()
+    return render_template("7-states_list.html", states=states)
 
 
 if __name__ == '__main__':
